@@ -8,11 +8,8 @@ jobs:
     steps: 
       - checkout
       - 
-
-      run:
-
-        command: |
-
+    run:
+      command: |
           sudo apt-get update --allow-insecure-repositories
 
           # install DumpsterDiver here
@@ -29,7 +26,7 @@ jobs:
 
           python3 DumpsterDiver.py -p /home/circleci/spring-rest-helloworld --min-key 40 --max-key 40 --entropy 4.3
 
-          name: "dumpster diver"
+        name: "dumpster diver"
             restore_cache: 
               key: "spring-rest-helloworld-{{ checksum \"pom.xml\" }}"
           - 
